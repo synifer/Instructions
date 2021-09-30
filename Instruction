@@ -1,0 +1,30 @@
+# install git
+$ sudo apt-get install git
+# configure git credential
+$ git config --global user.name "github_nickname" 
+$ git config --global user.email "github_username@example.com"
+# check git credential
+$ git config --list
+
+# additional untility for git
+$ cd ~
+$ git clone https://github.com/magicmonty/bash-git-prompt.git .bash-git-prompt --depth=1  
+$ GIT_PROMPT_ONLY_IN_REPO=1
+$ source ~/.bash-git-prompt/gitprompt.sh
+
+exec bash
+# generate ssh key
+$ ssh-keygen -t rsa -b 4096 -C "username@example.com"
+
+# start ssh-agent in the background
+$ eval "$(ssh-agent -s)" 
+$ ssh-add
+$ ssh-add ~/.ssh/id_rsa 
+# look key hash
+$ ssh-add -l 
+# look key for copy
+$ cat ~/.ssh/id_rsa.pub 
+# check connectivity to github
+$ ssh -T git@github.com 
+# debug connectivity to github  
+$ ssh -vT git@github.com  
